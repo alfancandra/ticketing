@@ -31,7 +31,7 @@ class Ticket extends Migration
 				'type'           => 'TEXT',
 				'null'           => true,
 			],
-            'status' => [
+            'statusTicket' => [
 				'type'           => 'INT',
 				'constraint'     => 11,
 			],

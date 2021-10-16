@@ -32,13 +32,13 @@
                 ?>
                     <tr>
                         <td><?= $no++; ?></td>
-                        <td><?= $row->nama; ?></td>
-                        <td><?= $row->email; ?></td>
-                        <td><?= $row->category_id; ?></td>
-                        <td><?= $row->message; ?></td>
-                        <td><?php if($row->status==0){
+                        <td><?= $row['nama']; ?></td>
+                        <td><?= $row['email']; ?></td>
+                        <td><?= $row['category']; ?></td>
+                        <td><?= $row['message']; ?></td>
+                        <td><?php if($row->statusTicket==0){
                             echo 'Belum Diatasi';
-                        }elseif($row->status==1){
+                        }elseif($row->statusTicket==1){
                             echo 'Sudah Diatasi';
                         }else{
                             echo 'Tidak Dapat Diatasi';

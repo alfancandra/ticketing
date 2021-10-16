@@ -15,7 +15,7 @@ class TicketController extends BaseController
 
     public function index()
     {
-        $data['ticket'] = $this->ticket->findAll();
+        $data['ticket'] = $this->ticket->getTicket();
         return view('ticket/index', $data);
     }
 }

@@ -19,7 +19,7 @@ class CategoryTicket extends Migration
 				'type'           => 'VARCHAR',
 				'constraint'     => '255',
 			],
-            'status'       => [
+            'statusUrgent'       => [
 				'type'           => 'INT',
 				'constraint'     => 11,
 			],
