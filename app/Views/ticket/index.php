@@ -24,6 +24,7 @@
                     <th>Category</th>
                     <th>Pesan</th>
                     <th>Status</th>
+                    <th>Priority</th>
                     <th>Action</th>
                 </tr>
                 <?php
@@ -36,12 +37,19 @@
                         <td><?= $row['email']; ?></td>
                         <td><?= $row['category']; ?></td>
                         <td><?= $row['message']; ?></td>
-                        <td><?php if($row->statusTicket==0){
+                        <td><?php if($row['statusTicket']==0){
                             echo 'Belum Diatasi';
-                        }elseif($row->statusTicket==1){
+                        }elseif($row['statusTicket']==1){
                             echo 'Sudah Diatasi';
                         }else{
                             echo 'Tidak Dapat Diatasi';
+                        } ?></td>
+                        <td><?php if($row['statusUrgent']==1){
+                            echo "<span class='text-danger'>Critical</span>";
+                        }elseif($row['statusUrgent']==2){
+                            echo "<span class='text-warning'>Normal</span>";
+                        }else{
+                            echo "<span class='text-success'>Low</span>";
                         } ?></td>
                         <td>
                             <a title="Edit" href="<?= base_url("pegawai/edit/$row->id"); ?>" class="btn btn-info">Edit</a>

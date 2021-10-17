@@ -33,6 +33,7 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->get('/ticket', 'TicketController::index');
+$routes->post('/ticket/store','TicketController::store');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

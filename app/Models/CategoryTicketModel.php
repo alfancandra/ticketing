@@ -39,4 +39,10 @@ class CategoryTicketModel extends Model
     protected $afterFind            = [];
     protected $beforeDelete         = [];
     protected $afterDelete          = [];
+
+    public function getCategory()
+    {
+        return $this->db->table('category_ticket')
+         ->get()->getResultArray();  
+    }
 }
