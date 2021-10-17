@@ -16,7 +16,8 @@
             <?php endif; ?>
             <a href="<?= base_url('/pegawai/create'); ?>" class="btn btn-primary">Tambah</a>
             <hr />
-            <table class="table table-bordered">
+            <table class="table table-bordered" id="table1">
+                <thead>
                 <tr>
                     <th>No</th>
                     <th>Nama</th>
@@ -27,6 +28,8 @@
                     <th>Priority</th>
                     <th>Action</th>
                 </tr>
+                </thead>
+                <tbody>
                 <?php
                 $no = 1;
                 foreach ($ticket as $row) {
@@ -59,8 +62,14 @@
                 <?php
                 }
                 ?>
+                </tbody>
             </table>
         </div>
     </div>
 </div>
+<script>
+    $(document).ready( function () {
+        $('#table1').DataTable();
+    } );
+</script>
 <?= $this->endSection('content'); ?>
