@@ -34,6 +34,9 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Home::index');
 $routes->get('/ticket', 'TicketController::index');
 $routes->post('/ticket/store','TicketController::store');
+
+// Category
+$routes->get('/category', 'CategoryController::index');
 /*
  * --------------------------------------------------------------------
  * Additional Routing
