@@ -37,6 +37,8 @@ $routes->post('/ticket/store','TicketController::store');
 
 // Category
 $routes->get('/category', 'CategoryController::index');
+$routes->get('/category/create', 'CategoryController::create');
+$routes->post('/category/store','CategoryController::store');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

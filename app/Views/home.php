@@ -33,32 +33,32 @@
     <?php endif; ?>
     <div class="container mt-3">
         <form action="<?= base_url('ticket/store') ?>" method="post">
-        <?= csrf_field(); ?>
-        <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Nama</label>
-            <input type="text" name="nama" class="form-control" value="<?= old('nama') ?>" placeholder="Input Nama Lengkap">
-        </div>
-        <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Email</label>
-            <input type="email" name="email" class="form-control" value="<?= old('email') ?>" placeholder="Input Email">
-        </div>
-        <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Category</label>
-        <select class="form-select" name="category_id" aria-label="Default select example">
-        <?php
-        foreach ($category as $row) {
-        ?>
-            <option value="<?= $row['id']; ?>"><?= $row['category']; ?></option>
-        <?php } ?>
-        </select>
-        </div>
-        <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">Pesan</label>
-            <textarea class="form-control" value="<?= old('message') ?>" name="message" id="exampleFormControlTextarea1" rows="3"></textarea>
-        </div>
-        <div class="mb-3">
-            <button class="btn btn-success" type="submit">Kirim</button>
-        </div>
+            <?= csrf_field(); ?>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Nama</label>
+                <input type="text" name="nama" class="form-control" value="<?= old('nama') ?>" placeholder="Input Nama Lengkap">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Email</label>
+                <input type="email" name="email" class="form-control" value="<?= old('email') ?>" placeholder="Input Email">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Category</label>
+                <select class="form-select" name="category_id" aria-label="Default select example">
+                    <?php
+                    foreach ($category as $row) {
+                        ?>
+                        <option value="<?= $row['id']; ?>"><?= $row['category']; ?></option>
+                    <?php } ?>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Pesan</label>
+                <textarea class="form-control" value="<?= old('message') ?>" name="message" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-success" type="submit">Kirim</button>
+            </div>
         </form>
     </div>
 
