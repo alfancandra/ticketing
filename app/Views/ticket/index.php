@@ -81,7 +81,7 @@
 <script>
     $(document).ready( function () {
         $('#table1').DataTable({
-            "order": [[ 7, "desc" ]]
+            "order": [[ 7, "asc" ]]
         });
     } );
 </script>

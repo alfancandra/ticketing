@@ -110,6 +110,6 @@ class TicketController extends BaseController
             $data = $email->printDebugger(['headers']);
             print_r($data);
         }
-        return redirect()->back();
+        return redirect()->to('/ticket/'.$subject);
     }
 }

@@ -18,7 +18,8 @@
               <div class="mb-3 row">
                 <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
                 <div class="col-sm-10">
-                    <input class="form-control-plaintext" name="email" value="<?= $row['email']; ?>">
+                    <input type="hidden" name="email" value="<?= $row['email']; ?>">
+                    <span class="form-control-plaintext"><?= $row['email']; ?></span>
                 </div>
               </div>
               <div class="mb-3 row">
