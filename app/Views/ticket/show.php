@@ -82,6 +82,12 @@
                 </div>
               </div>
               </form>
+              
+              <div class="mb-3 row">
+                <label for="staticEmail" class="col-sm-2 col-form-label"></label>
+                <a title="Edit" onclick="return confirm('Yakin untuk Solve Ticket ini?');" href="<?php echo base_url().'/ticket/solved/'.$row['idticket']; ?>" class="btn btn-success">Solved</a>
+                
+              </div>
 
           <?php } ?>
         </div>
