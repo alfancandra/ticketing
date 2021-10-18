@@ -66,8 +66,8 @@
                         <td><?= date('d-F-Y H:i', strtotime($row['tanggal_update'])); ?></td>
                         <td>
                             <a href="<?php echo base_url().'/ticket/'.$row['idticket']; ?>" class="btn btn-primary">Show</a>
-                            <a title="Edit" href="<?= base_url("pegawai/edit/$row->id"); ?>" class="btn btn-success">Edit</a>
-                            <a title="Delete" href="<?= base_url("pegawai/delete/$row->id") ?>" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data ?')">Delete</a>
+                            <a title="Edit" onclick="return confirm('Yakin untuk Solve Ticket ini?');" href="<?php echo base_url().'/ticket/solved/'.$row['idticket']; ?>" class="btn btn-success">Solved</a>
+                            <!-- <a title="Delete" href="<?= base_url("pegawai/delete/$row->id") ?>" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data ?')">Delete</a> -->
                         </td>
                     </tr>
                 <?php

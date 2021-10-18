@@ -112,4 +112,12 @@ class TicketController extends BaseController
         }
         return redirect()->to('/ticket/'.$subject);
     }
+
+    public function solved($id)
+    {
+        $this->ticket->update($id,[
+            'statusTicket' => 1,
+        ]);
+        return redirect()->to('/ticket');
+    }
 }

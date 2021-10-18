@@ -34,6 +34,7 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Home::index');
 $routes->get('/ticket', 'TicketController::index');
 $routes->get('/ticket/(:num)', 'TicketController::showbyid/$1');
+$routes->get('/ticket/solved/(:num)', 'TicketController::solved/$1');
 $routes->post('/ticket/sendmessage','TicketController::sendmessage');
 
 $routes->get('/ticket/nonaktif', 'TicketController::diatasi');
