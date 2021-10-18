@@ -71,6 +71,30 @@ class TicketController extends BaseController
             'category_id' => $this->request->getVar('category_id'),
             'message' => $this->request->getVar('message'),
         ]);
+        $to = $this->request->getVar('email');
+        $subject = $this->ticket->getInsertID();
+        $message = $this->request->getVar('message');
+        $data['id'] = 22;
+        $data['nama'] = $this->request->getVar('nama');
+        $data['message'] = $this->request->getVar('message');
+        print_r($to);
+        $email = \Config\Services::email();
+
+        $email->setTo($to);
+        $email->setFrom('hello@example.com', 'Ticket');
+        $email->setSubject('TICKET['.$subject.']');
+        $isimessage = view('email/createticket',$data);
+        $email->setMessage($isimessage);
+
+        if ($email->send()) 
+        {
+            echo 'Email successfully sent';
+        } 
+        else 
+        {
+            $data = $email->printDebugger(['headers']);
+            print_r($data);
+        }
         session()->setFlashdata('message', 'Ticket Berhasil terkirim');
         return redirect()->to('/');
     }
