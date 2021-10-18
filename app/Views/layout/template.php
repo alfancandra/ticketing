@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v4.1.1">
-    <title>Sticky Footer Navbar Template · Bootstrap</title>
+    <title>Web Ticketing</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/sticky-footer-navbar/">
 
@@ -38,7 +38,7 @@
 
 </head>
 
-<body class="d-flex flex-column h-100">
+<body class="">
     <header>
         <!-- Fixed navbar -->
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
@@ -63,7 +63,7 @@
     </header>
 
     <!-- Begin page content -->
-    <main role="main" class="flex-shrink-0">
+    <main role="main">
         <?= $this->renderSection('content') ?>
     </main>
 

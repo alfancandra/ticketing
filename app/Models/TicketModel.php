@@ -12,10 +12,22 @@ class TicketModel extends Model
     protected $useTimestamps = true;
     protected $allowedFields = ['id', 'nama', 'email', 'category_id', 'message','statusTicket'];
 
-    public function getTicket()
+    public function getTicketActive($active)
     {
-        return $this->db->table('ticket')
-         ->join('category_ticket','category_ticket.id=ticket.category_id')
-         ->get()->getResultArray();  
+        return $this->db->table('ticket t')
+        ->select('t.id as idticket,t.nama,t.statusTicket,t.email,c.category,t.message,c.statusUrgent,t.created_at as tanggal_buat,t.updated_at as tanggal_update')
+        ->where('t.statusTicket',$active)
+        ->join('category_ticket c','c.id=t.category_id')
+        ->get()->getResultArray();  
     }
+
+    public function getTicketById($id)
+    {
+        return $this->db->table('ticket t')
+        ->select('t.id as idticket,t.nama,t.statusTicket,t.email,c.category,t.message,c.statusUrgent,t.created_at as tanggal_buat,t.updated_at as tanggal_update')
+        ->where('t.id',$id)
+        ->join('category_ticket c','c.id=t.category_id')
+        ->get()->getResultArray();  
+    }
+
 }

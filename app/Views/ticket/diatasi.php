@@ -4,13 +4,13 @@
     <h3>|</h3>
     <nav class="navbar navbar-light bg-light mt-5">
       <form class="form-inline">
-        <a href="/ticket" class="btn btn-outline-success" type="button">Belum diatasi</a>
-        <a href="/ticket/nonaktif" class="btn btn-sm btn-outline-secondary" type="button">Sudah diatasi</a>
+        <a href="/ticket" class="btn btn-sm btn-outline-secondary" type="button">Belum diatasi</a>
+        <a href="/ticket/nonaktif" class="btn btn-outline-success" type="button">Sudah diatasi</a>
       </form>
     </nav>
     <div class="card">
         <div class="card-header">
-            <h3>Data Ticket Aktif</h3>
+            <h3>Data Ticket Non Aktif</h3>
         </div>
         <div class="card-body">
             <?php if (!empty(session()->getFlashdata('message'))) : ?>
@@ -21,7 +21,6 @@
                     </button>
                 </div>
             <?php endif; ?>
-            <a href="<?= base_url('/pegawai/create'); ?>" class="btn btn-primary">Tambah</a>
             <hr />
             <table class="table table-striped" id="table1">
                 <thead>

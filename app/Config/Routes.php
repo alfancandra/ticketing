@@ -33,10 +33,15 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->get('/ticket', 'TicketController::index');
+$routes->get('/ticket/(:num)', 'TicketController::showbyid/$1');
+$routes->post('/ticket/sendmessage','TicketController::sendmessage');
+
+$routes->get('/ticket/nonaktif', 'TicketController::diatasi');
 $routes->post('/ticket/store','TicketController::store');
 
 // Category
 $routes->get('/category', 'CategoryController::index');
+
 $routes->get('/category/create', 'CategoryController::create');
 $routes->post('/category/store','CategoryController::store');
 /*
