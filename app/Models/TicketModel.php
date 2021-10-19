@@ -17,7 +17,7 @@ class TicketModel extends Model
         return $this->db->table('ticket t')
         ->select('t.id as idticket,t.nama,t.statusTicket,t.email,c.category,t.message,c.statusUrgent,t.created_at as tanggal_buat,t.updated_at as tanggal_update')
         ->where('t.statusTicket',$active)
-        ->orderBy('t.created_at','ASC')
+        ->orderBy('t.updated_at','ASC')
         ->join('category_ticket c','c.id=t.category_id')
         ->get()->getResultArray();  
     }
