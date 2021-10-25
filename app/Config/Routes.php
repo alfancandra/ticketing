@@ -32,19 +32,27 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-$routes->get('/ticket', 'TicketController::index');
-$routes->get('/ticket/(:num)', 'TicketController::showbyid/$1');
-$routes->get('/ticket/solved/(:num)', 'TicketController::solved/$1');
-$routes->post('/ticket/sendmessage','TicketController::sendmessage');
+$routes->get('/login','LoginController::index');
+$routes->post('login','LoginController::login');
+$routes->get('/register','LoginController::indexregister');
+$routes->post('register','LoginController::register');
+$routes->get('/logout','LoginController::logout');
 
-$routes->get('/ticket/nonaktif', 'TicketController::diatasi');
-$routes->post('/ticket/store','TicketController::store');
+$routes->group('/', ['filter' => 'authfilter'], function($routes) {
+    $routes->get('/ticket', 'TicketController::index');
+    $routes->get('/ticket/(:num)', 'TicketController::showbyid/$1');
+    $routes->get('/ticket/solved/(:num)', 'TicketController::solved/$1');
+    $routes->post('/ticket/sendmessage','TicketController::sendmessage');
 
-// Category
-$routes->get('/category', 'CategoryController::index');
+    $routes->get('/ticket/nonaktif', 'TicketController::diatasi');
+    $routes->post('/ticket/store','TicketController::store');
 
-$routes->get('/category/create', 'CategoryController::create');
-$routes->post('/category/store','CategoryController::store');
+    // Category
+    $routes->get('/category', 'CategoryController::index');
+
+    $routes->get('/category/create', 'CategoryController::create');
+    $routes->post('/category/store','CategoryController::store');
+});
 /*
  * --------------------------------------------------------------------
  * Additional Routing

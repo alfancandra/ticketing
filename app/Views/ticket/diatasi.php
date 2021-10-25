@@ -1,14 +1,12 @@
 <?= $this->extend('layout/template'); ?>
 <?= $this->section('content'); ?>
 <div class="container-fluid">
-    <h3>|</h3>
-    <nav class="navbar navbar-light bg-light mt-5">
-      <form class="form-inline">
-        <a href="/ticket" class="btn btn-sm btn-outline-secondary" type="button">Belum diatasi</a>
-        <a href="/ticket/nonaktif" class="btn btn-outline-success" type="button">Sudah diatasi</a>
-      </form>
-    </nav>
+
     <div class="card">
+        <form class="form-inline m-3">
+            <a href="/ticket" class="btn btn-sm btn-outline-secondary m-2" type="button">Belum diatasi</a>
+            <a href="/ticket/nonaktif" class="btn btn-outline-success m-2" type="button">Sudah diatasi</a>
+        </form>
         <div class="card-header">
             <h3>Data Ticket Non Aktif</h3>
         </div>
@@ -65,8 +63,8 @@
                         <td><?= date('d-F-Y H:i', strtotime($row['tanggal_update'])); ?></td>
                         <td>
                             <a href="<?php echo base_url().'/ticket/'.$row['idticket']; ?>" class="btn btn-primary">Show</a>
-                            <a title="Edit" href="<?= base_url("pegawai/edit/$row->id"); ?>" class="btn btn-success">Edit</a>
-                            <a title="Delete" href="<?= base_url("pegawai/delete/$row->id") ?>" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data ?')">Delete</a>
+                            <a title="Edit" href="<?= base_url("pegawai/edit/"); ?>" class="btn btn-success">Edit</a>
+                            <a title="Delete" href="<?= base_url("pegawai/delete/") ?>" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data ?')">Delete</a>
                         </td>
                     </tr>
                 <?php

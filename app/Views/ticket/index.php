@@ -1,14 +1,12 @@
 <?= $this->extend('layout/template'); ?>
 <?= $this->section('content'); ?>
 <div class="container-fluid">
-    <h3>|</h3>
-    <nav class="navbar navbar-light bg-light mt-5">
-      <form class="form-inline">
-        <a href="/ticket" class="btn btn-outline-success" type="button">Belum diatasi</a>
-        <a href="/ticket/nonaktif" class="btn btn-sm btn-outline-secondary" type="button">Sudah diatasi</a>
-      </form>
-    </nav>
+    
     <div class="card">
+    <form class="form-inline m-3">
+        <a href="/ticket" class="btn btn-outline-success m-2" type="button">Belum diatasi</a>
+        <a href="/ticket/nonaktif" class="btn btn-sm btn-outline-secondary m-2" type="button">Sudah diatasi</a>
+      </form>
         <div class="card-header">
             <h3>Data Ticket Aktif</h3>
         </div>
@@ -21,7 +19,7 @@
                     </button>
                 </div>
             <?php endif; ?>
-            <a href="<?= base_url('/pegawai/create'); ?>" class="btn btn-primary">Tambah</a>
+            <a href="" class="btn btn-primary">Tambah</a>
             <hr />
             <table class="table table-striped" id="table1">
                 <thead>
@@ -67,7 +65,7 @@
                         <td>
                             <a href="<?php echo base_url().'/ticket/'.$row['idticket']; ?>" class="btn btn-primary">Show</a>
                             <a title="Edit" onclick="return confirm('Yakin untuk Solve Ticket ini?');" href="<?php echo base_url().'/ticket/solved/'.$row['idticket']; ?>" class="btn btn-success">Solved</a>
-                            <!-- <a title="Delete" href="<?= base_url("pegawai/delete/$row->id") ?>" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data ?')">Delete</a> -->
+                            <!-- <a title="Delete" href="delete/$row->id") ?>" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data ?')">Delete</a> -->
                         </td>
                     </tr>
                 <?php
@@ -78,6 +76,7 @@
         </div>
     </div>
 </div>
+
 <script>
     $(document).ready( function () {
         $('#table1').DataTable({

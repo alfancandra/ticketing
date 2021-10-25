@@ -30,8 +30,8 @@
                             echo "<span class='text-success'>Low</span>";
                         } ?></td>
                         <td>
-                            <a title="Edit" href="<?= base_url("pegawai/edit/$row->id"); ?>" class="btn btn-success">Edit</a>
-                            <a title="Delete" href="<?= base_url("pegawai/delete/$row->id") ?>" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data ?')">Delete</a>
+                            <a title="Edit" href="" class="btn btn-success">Edit</a>
+                            <a title="Delete" href="" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data ?')">Delete</a>
                         </td>
                     </tr>
                 <?php
