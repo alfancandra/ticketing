@@ -39,12 +39,12 @@ $routes->post('register','LoginController::register');
 $routes->get('/logout','LoginController::logout');
 
 $routes->group('/', ['filter' => 'authfilter'], function($routes) {
-    $routes->get('/ticket', 'TicketController::index');
+    $routes->get('/ticketaktif', 'TicketController::index');
     $routes->get('/ticket/(:num)', 'TicketController::showbyid/$1');
     $routes->get('/ticket/solved/(:num)', 'TicketController::solved/$1');
     $routes->post('/ticket/sendmessage','TicketController::sendmessage');
 
-    $routes->get('/ticket/nonaktif', 'TicketController::diatasi');
+    $routes->get('/ticketnonaktif', 'TicketController::diatasi');
     $routes->post('/ticket/store','TicketController::store');
 
     // Category

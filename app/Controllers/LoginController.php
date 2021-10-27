@@ -30,7 +30,7 @@ class LoginController extends BaseController
                     'logged_in' => TRUE,
                     'role_id' => $datauser->role_id
                 ]);
-                return redirect()->to(base_url('ticket'));
+                return redirect()->to(base_url('ticketaktif'));
             } else {
                 session()->setFlashdata('error', 'Username & Password Salah');
                 return redirect()->back();

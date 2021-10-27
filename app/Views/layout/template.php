@@ -22,6 +22,7 @@
     <!-- End layout styles -->
     <link rel="shortcut icon" href="<?php echo base_url() ?>/assets/images/favicon.png" />
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+    <script src="../../assets/vendors/js/vendor.bundle.base.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type="text/javascript" charset="utf8" src="<?php echo base_url() ?>/assets/js/jquery.dataTables.js"></script>
     <style>
@@ -104,12 +105,27 @@
             <span class="nav-link">Navigation</span>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="/ticket">
+            <a class="nav-link" href="/">
               <span class="menu-icon">
                 <i class="mdi mdi-speedometer"></i>
               </span>
               <span class="menu-title">Dashboard</span>
             </a>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+              <span class="menu-icon">
+                <i class="mdi mdi-table-large"></i>
+              </span>
+              <span class="menu-title">Ticket</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-basic">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/ticketaktif">Ticket Aktif</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/ticketnonaktif">Ticket Non Aktif</a></li>
+              </ul>
+            </div>
           </li>
           <li class="nav-item menu-items">
             <a class="nav-link" href="/category">

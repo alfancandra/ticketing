@@ -3,10 +3,6 @@
 <div class="container-fluid">
 
     <div class="card">
-        <form class="form-inline m-3">
-            <a href="/ticket" class="btn btn-sm btn-outline-secondary m-2" type="button">Belum diatasi</a>
-            <a href="/ticket/nonaktif" class="btn btn-outline-success m-2" type="button">Sudah diatasi</a>
-        </form>
         <div class="card-header">
             <h3>Data Ticket Non Aktif</h3>
         </div>
